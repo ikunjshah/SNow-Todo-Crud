@@ -1,0 +1,31 @@
+<!-- task-form.component.html -->
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <label for="title">Add a Todo</label>
+  <input type="text" id="title" formControlName="title">
+  <br>
+
+  <!-- Sub-task Form -->
+  <div formArrayName="subTasks" class="sub-tasks">
+    <label>Sub-tasks</label>
+    <div *ngFor="let subTask of subTasks.controls; let i=index" [formGroupName]="i" class="sub-task">
+      <input type="text" formControlName="title" placeholder="Sub-task Title">
+      <button type="button" (click)="removeSubTask(i)">Remove</button>
+    </div>
+    <button type="button" (click)="addSubTask()" class="add-sub-task">Add Sub-task</button>
+  </div>  
+  <!-- Sub-task Form -->
+  
+  <label for="priority">Priority</label>
+  <select id="priority" formControlName="priority">
+    <option value="low">Low</option>
+    <option value="normal">Normal</option>
+    <option value="high">High</option>
+  </select>
+  <br>
+  <label for="deadline">Deadline</label>
+  <input type="date" id="deadline" formControlName="deadline">
+  <br>
+  <button type="submit">Add Todo</button>
+  <br>
+  <br>
+</form>

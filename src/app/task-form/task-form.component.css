@@ -1,0 +1,81 @@
+/* app/task-form/task-form.component.css */
+
+/* Style the form container */
+form {
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  /* Style form labels */
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Style form input fields */
+  input[type="text"],
+  select,
+  input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+  }
+  
+  /* Style the submit button */
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Style the submit button on hover */
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style the sub-task form container */
+.sub-tasks {
+  margin-bottom: 20px;
+}
+
+/* Style the sub-task title input */
+.sub-task input[type="text"] {
+  width: calc(100% - 80px); /* Adjust width to fit your layout */
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* Style the remove button for each sub-task */
+.sub-task button[type="button"] {
+  padding: 8px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px; /* Add margin between input and button */
+}
+
+/* Style the "Add Sub-task" button */
+.add-sub-task {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style the "Add Sub-task" button on hover */
+.add-sub-task:hover {
+  background-color: #45a049;
+}

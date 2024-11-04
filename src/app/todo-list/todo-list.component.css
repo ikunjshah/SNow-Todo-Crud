@@ -1,0 +1,207 @@
+/* Style the container */
+.todo {
+    margin: 10px;
+}
+
+.container {
+    text-align: center;
+}
+
+/* Style the todo input container */
+.todo-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.add-text {
+    margin-right: 10px;
+    font-size: 18px; /* Increase font size */
+    color: #333; /* Change color */
+  }
+
+.add-text {
+    margin-right: 10px;
+}
+
+.input-text {
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    padding: 10px;
+    flex: 1; /* Allow input to grow to fill remaining space */
+    margin-right: 10px;
+}
+
+/* Style the add button */
+.add-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+/* Style the todo list */
+.list ul {
+    padding: 0;
+    list-style: none;
+}
+
+.list ul li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    background-color: #f9f9f9;
+}
+
+.priority-select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }  
+
+/* Style the add button */
+.add-btn, .btn {
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 0.4rem;
+    background-color: #4CAF50; /* Green color for Add button */
+    color: white;
+    cursor: pointer;
+}
+
+.date {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px; /* Add margin between date field and priority */
+  margin-left: 20px;
+}
+
+/* Style the todo item */
+.todo-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Add margin to create space between items */
+}
+
+/* Style the delete button */
+.btn {
+    margin-left: 10px; /* Add margin between todo item and delete button */
+    padding: 10px 20px; /* Adjust padding to match the Add button */
+    border: none;
+    border-radius: 0.4rem;
+    background-color: #f44336; /* Red color for Delete button */
+    color: white;
+    cursor: pointer;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .tab.active {
+    background-color: #e0e0e0;
+    font-weight: bold;
+  }
+
+  .priority {
+    margin-left: 20px; /* Adjust as needed */
+  }
+
+  .low-priority {
+    color: orange;
+  }
+  
+  .normal-priority {
+    color: green;
+  }
+  
+  .high-priority {
+    color: red;
+  }
+
+  .list {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .list th,
+  .list td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .list th {
+    background-color: #f0f0f0;
+  }
+  
+  .todo-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .todo-item input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .priority {
+    margin-left: 20px;
+  }
+  
+  .low-priority {
+    color: orange;
+  }
+  
+  .normal-priority {
+    color: green;
+  }
+  
+  .high-priority {
+    color: red;
+  }
+
+/* Styling for the dropdown select */
+.assignee-select {
+  width: 20%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/* Styling for the dropdown options */
+.assignee-select option {
+  padding: 8px;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+/* Styling for the dropdown when open */
+.assignee-select:focus {
+  outline: none;
+  border-color: #007bff; /* Change the border color when focused */
+}
+
+/* Styling for the dropdown options when hovered */
+.assignee-select option:hover {
+  background-color: #f0f0f0; /* Change the background color when hovered */
+}

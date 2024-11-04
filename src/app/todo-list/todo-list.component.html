@@ -1,0 +1,81 @@
+  <div class="container" [ngClass]="{'dark-mode': darkMode}">
+    <div class="todo">
+      <div>
+        <!-- <button (click)="toggleV1()">Toggle V1</button>
+        <button (click)="toggleV2()">Toggle V2</button> -->
+        <button class="toggle-dark-mode" (click)="toggleTaskFormVisibility()">New Task</button>
+        <app-task-form *ngIf="isTaskFormVisible" (addTask)="handleAddTask($event)"></app-task-form>
+      </div>    
+      <div class="todo-input">
+        <span class="add-text">Add a todo:</span>
+        <input type="text" class="input-text"  [(ngModel)]="todoValue" (keyup.enter)="addItem()" />
+        <select [(ngModel)]="selectedPriority" class="priority-select">
+          <option value="low">Low</option>
+          <option value="normal">Normal</option>
+          <option value="high">High</option>
+        </select>
+        <input type="date" class="date" [(ngModel)]="selectedDeadline" />
+        <select [(ngModel)]="selectedAssignee" class="assignee-select">
+          <option value="">Select Assignee</option>
+          <option *ngFor="let userName of userNames" [value]="userName">{{ userName }}</option>
+        </select>
+      </div>
+      <button class="add-btn" (click)="addItem()">Add Todo</button>
+    </div>
+    <br>
+    <div class="tab-container">
+      <button class="tab" [class.active]="activeTab === 'pending'" (click)="activeTab = 'pending'">Pending Todos</button>
+      <button class="tab" [class.active]="activeTab === 'completed'" (click)="activeTab = 'completed'">Completed Todos</button>
+    </div>
+    <table class="list">
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Todos</th>
+          <th>Priority</th>
+          <th>Deadline</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="activeTab === 'pending'">
+          <tr *ngFor="let item of pendingTodos">
+            <td><input type="checkbox" name="isChecked" [(ngModel)]="item.isDone" (ngModelChange)="updateStatus(item)" /></td>
+            <td>
+              <a [routerLink]="['/userID', this.userID, 'todos', item.id]">{{ item.u_todo }}</a>
+            </td>
+            <td><span class="priority" [ngClass]="{
+              'low-priority': item.u_priority === 'low',
+              'normal-priority': item.u_priority === 'normal',
+              'high-priority': item.u_priority === 'high'
+            }">{{ item.u_priority.charAt(0).toUpperCase() + item.u_priority.slice(1) }}</span></td>
+            <td><input type="date" class="date" [(ngModel)]="item.u_glide_date" (blur)="updateDate(item)" /></td>
+            <td>
+              <button class="btn" (click)="updateItem(item.id)">Update</button>
+              <!-- <button class="btn" (click)="openForm(item)">Update</button> -->
+              <button class="btn" (click)="deleteItem(item.id)">Delete</button>
+            </td>
+          </tr>
+        </ng-container>
+        <ng-container *ngIf="activeTab === 'completed'">
+          <tr *ngFor="let item of completedTodos">
+            <td><input type="checkbox" name="isChecked" [(ngModel)]="item.isDone" (ngModelChange)="updateStatus(item)" checked /></td>
+            <td>
+              <a [routerLink]="['/userID', this.userID, 'todos', item.id]">{{ item.u_todo }}</a>
+            </td>          
+            <td><span class="priority" [ngClass]="{
+              'low-priority': item.u_priority === 'low',
+              'normal-priority': item.u_priority === 'normal',
+              'high-priority': item.u_priority === 'high'
+            }">{{ item.u_priority.charAt(0).toUpperCase() + item.u_priority.slice(1) }}</span></td>
+            <td><input type="date" class="date" [(ngModel)]="item.u_glide_date" (blur)="updateDate(item)" /></td>
+            <td>
+              <button class="btn" (click)="updateItem(item.id)">Update</button>
+              <button class="btn" (click)="deleteItem(item.id)">Delete</button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <router-outlet></router-outlet>

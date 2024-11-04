@@ -1,0 +1,18 @@
+<div class="todo-details">
+    <h2>Todo Details</h2>
+    <div *ngIf="todo">
+      <p><strong>Todo:</strong> {{ todo.u_todo }}</p>
+      <p><strong>Status:</strong> {{ todo.u_status }}</p>
+      <p><strong>Priority:</strong> {{ todo.u_priority }}</p>
+      <p><strong>Deadline:</strong> {{ todo.u_glide_date }}</p>
+      <label for="progress">Progress:</label>
+      <input type="range" id="progress" name="progress" min="1" max="5" [(ngModel)]="todo.u_progress" (input)="updateProgress($event)">
+      <p>{{ todo.u_progress }}</p>
+      <p><strong>Assignee:</strong> {{ todo.u_assignee }}</p>
+      <!-- <img *ngIf="todo.photo" [src]="todo.photo" alt="User Photo"> -->
+    </div>
+    <div *ngIf="!todo">
+      <p>Loading...</p>
+    </div>
+    <button (click)="goBack()">Go Back</button>
+  </div>
